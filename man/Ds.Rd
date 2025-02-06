@@ -2,10 +2,10 @@
 \alias{Ds}
 \docType{data}
 \title{
-%%   ~~ data name/kind ... ~~
+A list of ecological distance matrices for the gut microbiome data (Yanai et al., 2024, Nat Commun)
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+A list of ecological distance matrices for the gut microbiome data (Yanai et al., 2024, Nat Commun)
 }
 \usage{data("Ds")}
 \format{
@@ -40,17 +40,11 @@ List of 7
   .. ..$ : chr [1:48] "S1" "S2" "S3" "S4" ...
   .. ..$ : chr [1:48] "S1" "S2" "S3" "S4" ...
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
+
 \references{
-%%  ~~ possibly secondary sources and usages ~~
+Yanai et al. Short-term periodic restricted feeding elicits metabolome-microbiome signatures with sex dimorphic persistence in primate intervention. Nat Commun, 15(1088), 2024.
 }
 \examples{
 data(Ds)
-## maybe str(Ds) ; plot(Ds) ...
 }
 \keyword{datasets}

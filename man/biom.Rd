@@ -2,10 +2,10 @@
 \alias{biom}
 \docType{data}
 \title{
-%%   ~~ data name/kind ... ~~
+Example Data
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun)
 }
 \usage{data("biom")}
 \format{
@@ -48,17 +48,10 @@ Formal class 'sample_data' [package "phyloseq"] with 4 slots
   .. ..- attr(*, "order")= chr "cladewise"
   ..@ refseq   : NULL
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
 \references{
-%%  ~~ possibly secondary sources and usages ~~
+Yanai et al. Short-term periodic restricted feeding elicits metabolome-microbiome signatures with sex dimorphic persistence in primate intervention. Nat Commun, 15(1088), 2024.
 }
 \examples{
 data(biom)
-## maybe str(biom) ; plot(biom) ...
 }
 \keyword{datasets}

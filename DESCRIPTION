@@ -1,9 +1,9 @@
 Package: KernRBD
 Type: Package
-Title: What the package does (short line)
+Title: Kernel Machine Comparative Analysis for Randomized Block Designs
 Version: 1.0
 Date: 2025-02-06
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Hyunwook Koh
+Maintainer: Hyunwook Koh <hyunwook.koh@stonybrook.edu>
+Description: This R package provides facilities for a general kernel machine comparative analysis framework for randomized block designs, named as KernRBD, to investigate the effects of treatments (e.g., medical treatment, environmental exposure) on the underlying variants. KernRBD is unique in its range of functionalities, including the computation of P-values for global testing and adjusted P-values for pairwise comparisons, as well as the visual representation using an ordination plot in a reduced coordinate space. KernRBD is also (i) practical requiring only a kernel as input without the need to know of its underlying real variants, and (ii) robustly valid based on a resampling scheme not requiring the assumption of normality to be satisfied. Furthermore, the omnibus test of KernRBD based on the minimum P-value test statistic enables a unified and powerful significance testing across multiple input kernels.
+License: GNU v3.0

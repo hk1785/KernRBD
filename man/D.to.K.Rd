@@ -1,66 +1,28 @@
 \name{D.to.K}
 \alias{D.to.K}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Distance to kernel
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function converts distance matrix to kernel matrix.
 }
 \usage{
 D.to.K(D)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{D}{
-%%     ~~Describe \code{D} here~~
+Distance matrix
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+Kernel matrix
 }
 \references{
-%% ~put references to the literature/web site here ~
+Koh H. A general kernel machine comparative analysis framework for randomized block designs. (In Review)
 }
 \author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+Hyunwook Koh
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (D) 
-{
-    n <- nrow(D)
-    centerM <- diag(n) - 1/n
-    K <- -0.5 * centerM \%*\% (D * D) \%*\% centerM
-    return(K)
-  }
+Ks <- lapply(Ds, function(d) D.to.K(d))
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
-% \concept{ ~cpt2 }
-% Use only one concept per line.
