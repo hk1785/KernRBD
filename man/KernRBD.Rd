@@ -75,9 +75,9 @@ Hyunwook Koh
   
   ##### First kernel (Jaccard) 
   
-  # Color labels for the treatments: "Baseline", "PRF 1", "PRF 2", "PRF 3"
+  # Color labels for the treatments: 'Baseline', 'PRF 1', 'PRF 2', 'PRF 3'
   
-  cols <- c("green2", "blue2", "purple2", "red2")
+  cols <- c('green2', 'blue2', 'purple2', 'red2')
   
   # Singular value decomposition
   
@@ -88,9 +88,9 @@ Hyunwook Koh
   # 2D plot
   
   plot(pcs[,1], pcs[,2], 
-       xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       main = "Jaccard", 
+       xlab = paste('PC 1 (', round((eivals[1]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       ylab = paste('PC 2 (', round((eivals[2]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       main = 'Jaccard', 
        col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
        xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
        ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
@@ -102,19 +102,19 @@ Hyunwook Koh
   
   plot3d( 
     x = pcs[,2], y = pcs[,3], z = pcs[,1], col = cols, 
-    type = "s", 
-    zlab = paste("PC 1 (", round(eivals[1]/sum(eivals) * 100, 1), "%)", sep = ""),
-    xlab = paste("PC 2 (", round(eivals[2]/sum(eivals) * 100, 1), "%)", sep = ""),
-    ylab = paste("PC 3 (", round(eivals[3]/sum(eivals) * 100, 1), "%)", sep = ""),
+    type = 's', 
+    zlab = paste('PC 1 (', round(eivals[1]/sum(eivals) * 100, 1), '%)', sep = ''),
+    xlab = paste('PC 2 (', round(eivals[2]/sum(eivals) * 100, 1), '%)', sep = ''),
+    ylab = paste('PC 3 (', round(eivals[3]/sum(eivals) * 100, 1), '%)', sep = ''),
     cex.axis = 0.5)
   
   rglwidget()
   
   ### Second kernel (Bray-Curtis) 
   
-  # Color labels for the treatments: "Baseline", "PRF 1", "PRF 2", "PRF 3"
+  # Color labels for the treatments: 'Baseline', 'PRF 1', 'PRF 2', 'PRF 3'
   
-  cols <- c("green2", "blue2", "purple2", "red2")
+  cols <- c('green2', 'blue2', 'purple2', 'red2')
   
   # Singular value decomposition
   
@@ -125,9 +125,9 @@ Hyunwook Koh
   # 2D plot
   
   plot(pcs[,1], pcs[,2], 
-       xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       main = "Bray-Curtis", 
+       xlab = paste('PC 1 (', round((eivals[1]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       ylab = paste('PC 2 (', round((eivals[2]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       main = 'Bray-Curtis', 
        col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
        xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
        ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
@@ -139,19 +139,19 @@ Hyunwook Koh
   
   plot3d( 
     x = pcs[,2], y = pcs[,3], z = pcs[,1], col = cols, 
-    type = "s", 
-    zlab = paste("PC 1 (", round(eivals[1]/sum(eivals) * 100, 1), "%)", sep = ""),
-    xlab = paste("PC 2 (", round(eivals[2]/sum(eivals) * 100, 1), "%)", sep = ""),
-    ylab = paste("PC 3 (", round(eivals[3]/sum(eivals) * 100, 1), "%)", sep = ""),
+    type = 's', 
+    zlab = paste('PC 1 (', round(eivals[1]/sum(eivals) * 100, 1), '%)', sep = ''),
+    xlab = paste('PC 2 (', round(eivals[2]/sum(eivals) * 100, 1), '%)', sep = ''),
+    ylab = paste('PC 3 (', round(eivals[3]/sum(eivals) * 100, 1), '%)', sep = ''),
     cex.axis = 0.5)
   
   rglwidget()
   
   ### Third kernel (UUniFrac) 
   
-  # Color labels for the treatments: "Baseline", "PRF 1", "PRF 2", "PRF 3"
+  # Color labels for the treatments: 'Baseline', 'PRF 1', 'PRF 2', 'PRF 3'
   
-  cols <- c("green2", "blue2", "purple2", "red2")
+  cols <- c('green2', 'blue2', 'purple2', 'red2')
   
   # Singular value decomposition
   
@@ -162,9 +162,9 @@ Hyunwook Koh
   # 2D plot
   
   plot(pcs[,1], pcs[,2], 
-       xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       main = "UUniFrac", 
+       xlab = paste('PC 1 (', round((eivals[1]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       ylab = paste('PC 2 (', round((eivals[2]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       main = 'UUniFrac', 
        col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
        xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
        ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
@@ -176,19 +176,19 @@ Hyunwook Koh
   
   plot3d( 
     x = pcs[,2], y = pcs[,3], z = pcs[,1], col = cols, 
-    type = "s", 
-    zlab = paste("PC 1 (", round(eivals[1]/sum(eivals) * 100, 1), "%)", sep = ""),
-    xlab = paste("PC 2 (", round(eivals[2]/sum(eivals) * 100, 1), "%)", sep = ""),
-    ylab = paste("PC 3 (", round(eivals[3]/sum(eivals) * 100, 1), "%)", sep = ""),
+    type = 's', 
+    zlab = paste('PC 1 (', round(eivals[1]/sum(eivals) * 100, 1), '%)', sep = ''),
+    xlab = paste('PC 2 (', round(eivals[2]/sum(eivals) * 100, 1), '%)', sep = ''),
+    ylab = paste('PC 3 (', round(eivals[3]/sum(eivals) * 100, 1), '%)', sep = ''),
     cex.axis = 0.5)
   
   rglwidget()
   
   ### Fourth kernel (GUniFrac 0.25) 
   
-  # Color labels for the treatments: "Baseline", "PRF 1", "PRF 2", "PRF 3"
+  # Color labels for the treatments: 'Baseline', 'PRF 1', 'PRF 2', 'PRF 3'
   
-  cols <- c("green2", "blue2", "purple2", "red2")
+  cols <- c('green2', 'blue2', 'purple2', 'red2')
   
   # Singular value decomposition
   
@@ -199,9 +199,9 @@ Hyunwook Koh
   # 2D plot
   
   plot(pcs[,1], pcs[,2], 
-       xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       main = "GUniFrac (0.25)", 
+       xlab = paste('PC 1 (', round((eivals[1]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       ylab = paste('PC 2 (', round((eivals[2]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       main = 'GUniFrac (0.25)', 
        col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
        xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
        ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
@@ -213,19 +213,19 @@ Hyunwook Koh
   
   plot3d( 
     x = pcs[,2], y = pcs[,3], z = pcs[,1], col = cols, 
-    type = "s", 
-    zlab = paste("PC 1 (", round(eivals[1]/sum(eivals) * 100, 1), "%)", sep = ""),
-    xlab = paste("PC 2 (", round(eivals[2]/sum(eivals) * 100, 1), "%)", sep = ""),
-    ylab = paste("PC 3 (", round(eivals[3]/sum(eivals) * 100, 1), "%)", sep = ""),
+    type = 's', 
+    zlab = paste('PC 1 (', round(eivals[1]/sum(eivals) * 100, 1), '%)', sep = ''),
+    xlab = paste('PC 2 (', round(eivals[2]/sum(eivals) * 100, 1), '%)', sep = ''),
+    ylab = paste('PC 3 (', round(eivals[3]/sum(eivals) * 100, 1), '%)', sep = ''),
     cex.axis = 0.5)
   
   rglwidget()
   
   ### Fifth kernel (GUniFrac 0.5) 
   
-  # Color labels for the treatments: "Baseline", "PRF 1", "PRF 2", "PRF 3"
+  # Color labels for the treatments: 'Baseline', 'PRF 1', 'PRF 2', 'PRF 3'
   
-  cols <- c("green2", "blue2", "purple2", "red2")
+  cols <- c('green2', 'blue2', 'purple2', 'red2')
   
   # Singular value decomposition
   
@@ -236,9 +236,9 @@ Hyunwook Koh
   # 2D plot
   
   plot(pcs[,1], pcs[,2], 
-       xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       main = "GUniFrac (0.5)", 
+       xlab = paste('PC 1 (', round((eivals[1]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       ylab = paste('PC 2 (', round((eivals[2]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       main = 'GUniFrac (0.5)', 
        col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
        xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
        ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
@@ -250,19 +250,19 @@ Hyunwook Koh
   
   plot3d( 
     x = pcs[,2], y = pcs[,3], z = pcs[,1], col = cols, 
-    type = "s", 
-    zlab = paste("PC 1 (", round(eivals[1]/sum(eivals) * 100, 1), "%)", sep = ""),
-    xlab = paste("PC 2 (", round(eivals[2]/sum(eivals) * 100, 1), "%)", sep = ""),
-    ylab = paste("PC 3 (", round(eivals[3]/sum(eivals) * 100, 1), "%)", sep = ""),
+    type = 's', 
+    zlab = paste('PC 1 (', round(eivals[1]/sum(eivals) * 100, 1), '%)', sep = ''),
+    xlab = paste('PC 2 (', round(eivals[2]/sum(eivals) * 100, 1), '%)', sep = ''),
+    ylab = paste('PC 3 (', round(eivals[3]/sum(eivals) * 100, 1), '%)', sep = ''),
     cex.axis = 0.5)
   
   rglwidget()
   
   ### Sixth kernel (GUniFrac 0.75) 
   
-  # Color labels for the treatments: "Baseline", "PRF 1", "PRF 2", "PRF 3"
+  # Color labels for the treatments: 'Baseline', 'PRF 1', 'PRF 2', 'PRF 3'
   
-  cols <- c("green2", "blue2", "purple2", "red2")
+  cols <- c('green2', 'blue2', 'purple2', 'red2')
   
   # Singular value decomposition
   
@@ -273,9 +273,9 @@ Hyunwook Koh
   # 2D plot
   
   plot(pcs[,1], pcs[,2], 
-       xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       main = "GUniFrac (0.75)", 
+       xlab = paste('PC 1 (', round((eivals[1]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       ylab = paste('PC 2 (', round((eivals[2]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       main = 'GUniFrac (0.75)', 
        col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
        xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
        ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
@@ -287,19 +287,19 @@ Hyunwook Koh
   
   plot3d( 
     x = pcs[,2], y = pcs[,3], z = pcs[,1], col = cols, 
-    type = "s", 
-    zlab = paste("PC 1 (", round(eivals[1]/sum(eivals) * 100, 1), "%)", sep = ""),
-    xlab = paste("PC 2 (", round(eivals[2]/sum(eivals) * 100, 1), "%)", sep = ""),
-    ylab = paste("PC 3 (", round(eivals[3]/sum(eivals) * 100, 1), "%)", sep = ""),
+    type = 's', 
+    zlab = paste('PC 1 (', round(eivals[1]/sum(eivals) * 100, 1), '%)', sep = ''),
+    xlab = paste('PC 2 (', round(eivals[2]/sum(eivals) * 100, 1), '%)', sep = ''),
+    ylab = paste('PC 3 (', round(eivals[3]/sum(eivals) * 100, 1), '%)', sep = ''),
     cex.axis = 0.5)
   
   rglwidget()
   
   ### Seventh kernel (WUniFrac) 
   
-  # Color labels for the treatments: "Baseline", "PRF 1", "PRF 2", "PRF 3"
+  # Color labels for the treatments: 'Baseline', 'PRF 1', 'PRF 2', 'PRF 3'
   
-  cols <- c("green2", "blue2", "purple2", "red2")
+  cols <- c('green2', 'blue2', 'purple2', 'red2')
   
   # Singular value decomposition
   
@@ -310,9 +310,9 @@ Hyunwook Koh
   # 2D plot
   
   plot(pcs[,1], pcs[,2], 
-       xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
-       main = "WUniFrac", 
+       xlab = paste('PC 1 (', round((eivals[1]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       ylab = paste('PC 2 (', round((eivals[2]/sum(eivals)) * 100, 1), '%)', sep = ''), 
+       main = 'WUniFrac', 
        col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
        xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
        ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
@@ -324,10 +324,10 @@ Hyunwook Koh
   
   plot3d( 
     x = pcs[,2], y = pcs[,3], z = pcs[,1], col = cols, 
-    type = "s", 
-    zlab = paste("PC 1 (", round(eivals[1]/sum(eivals) * 100, 1), "%)", sep = ""),
-    xlab = paste("PC 2 (", round(eivals[2]/sum(eivals) * 100, 1), "%)", sep = ""),
-    ylab = paste("PC 3 (", round(eivals[3]/sum(eivals) * 100, 1), "%)", sep = ""),
+    type = 's', 
+    zlab = paste('PC 1 (', round(eivals[1]/sum(eivals) * 100, 1), '%)', sep = ''),
+    xlab = paste('PC 2 (', round(eivals[2]/sum(eivals) * 100, 1), '%)', sep = ''),
+    ylab = paste('PC 3 (', round(eivals[3]/sum(eivals) * 100, 1), '%)', sep = ''),
     cex.axis = 0.5)
   
   rglwidget()
