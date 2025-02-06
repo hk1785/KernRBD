@@ -64,7 +64,7 @@ KernRBD <- function(Ks, Block.IDs, Treatment, n.res = 5000)
 * _Ks_ - A list of kernel (similarity) matrices after quality controls and reorganizations.
 * _block.IDs_ - A vector of block (e.g., subject) IDs after quality controls and reorganizations.
 * _treatment_ - A vector of treatment labels after quality controls and reorganizations.
-* _global.out_ - A list of P-values for global testing
+* _global.out_ - A list of P-values for global testing.
 * _pairwise.out_ - A list of P-values and adjusted P-values for pairwise comparisons.
 
 ### Example

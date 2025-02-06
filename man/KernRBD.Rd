@@ -1,10 +1,10 @@
 \name{KernRBD}
 \alias{KernRBD}
 \title{
-KernRBD to compute P-values for global testing and adjusted P-values for pairwise comparisons
+  KernRBD to compute P-values for global testing and adjusted P-values for pairwise comparisons
 }
 \description{
-KernRBD to compute P-values for global testing and adjusted P-values for pairwise comparisons
+  KernRBD to compute P-values for global testing and adjusted P-values for pairwise comparisons
 }
 \usage{
   KernRBD(Ks, Block.IDs, Treatment, n.res = 5000)
@@ -33,20 +33,20 @@ KernRBD to compute P-values for global testing and adjusted P-values for pairwis
 }
 
 \references{
-Koh H. A general kernel machine comparative analysis framework for randomized block designs. (In Review)
+  Koh H. A general kernel machine comparative analysis framework for randomized block designs. (In Review)
 }
 
 \author{
-Hyunwook Koh
+  Hyunwook Koh
 }
 
 \examples{
   
-  library(ade4)
-  library(gtools)
-  library(phyloseq)
-  library(rgl)
-  library(KernRBD)
+  require(ade4)
+  require(gtools)
+  require(phyloseq)
+  require(rgl)
+  require(KernRBD)
   
   ###################
   # Perform KernRBD #
