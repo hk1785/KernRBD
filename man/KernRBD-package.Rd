@@ -22,3 +22,9 @@ Maintainer: \packageMaintainer{KernRBD}
 \references{
 Koh H. A general kernel machine comparative analysis framework for randomized block designs. (In Review)
 }
+\keyword{
+}
+\seealso{
+}
+\examples{
+}
