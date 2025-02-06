@@ -20,7 +20,7 @@ A vector of block (e.g., subject) IDs.
 A vector of treatment labels.
   }
   \item{n.res}{
-The number of resamples (Default: 5000).
+The number of resamples (Default: 5000). Using a larger number (e.g., n.res = 30000) is recommended.
   }
 }
 
