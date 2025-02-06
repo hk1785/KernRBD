@@ -2,10 +2,10 @@
 \alias{Ds}
 \docType{data}
 \title{
-distances
+Distance
 }
 \description{
-distances
+Distance
 }
 \usage{data("Ds")}
 \format{
