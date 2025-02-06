@@ -78,7 +78,7 @@ library(KernRBD)
 ```
 Example Data: Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun)
 ```
-biom
+data(biom)
 
 otu.tab <- otu_table(biom)
 tax.tab <- tax_table(biom)
@@ -87,6 +87,8 @@ tree <- phy_tree(biom)
 ```
 Convert pairwise distance matrix to pairwise kernel matrix.
 ```
+data(Ds)
+
 Ks <- lapply(Ds, function(d) D.to.K(d))
 ```
 Perform KernRBD.
