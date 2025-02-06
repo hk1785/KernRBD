@@ -2,7 +2,7 @@
 \alias{biom}
 \docType{data}
 \title{
-Example Data
+Data
 }
 \description{
 Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun)

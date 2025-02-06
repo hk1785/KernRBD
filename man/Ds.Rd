@@ -2,10 +2,10 @@
 \alias{Ds}
 \docType{data}
 \title{
-A list of ecological distance matrices for the gut microbiome data (Yanai et al., 2024, Nat Commun)
+distances
 }
 \description{
-A list of ecological distance matrices for the gut microbiome data (Yanai et al., 2024, Nat Commun)
+distances
 }
 \usage{data("Ds")}
 \format{
