@@ -30,9 +30,16 @@ If you have any problems for using this R package, please report in Issues (http
 
 ## Prerequites
 
-ade4, gtools, phyloseq, rgl
+ade4, gtools, rgl
 ```
-install.packages(c("ade4", "gtools", "phyloseq", "rgl"))
+install.packages(c("ade4", "gtools", "rgl"))
+```
+phyloseq
+```
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("phyloseq")
 ```
 
 ## Installation
