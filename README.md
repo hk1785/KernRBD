@@ -143,10 +143,12 @@ plot(pcs[,1], pcs[,2],
      xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      main = "Jaccard", 
-     col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
+     col = cols, mgp = c(2.5, 1, 0), pch = 1:length(cols), frame = TRUE,
      xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
      ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
      cex = 1, cex.main = 1.2, cex.lab = 1)
+
+grid(10, 10, lwd = 0.5)
 
 s.class(as.data.frame(pcs[,c(1, 2)]), fac = as.factor(out$treatment), cpoint = 0, col = cols, add.plot = TRUE)
 
@@ -180,10 +182,12 @@ plot(pcs[,1], pcs[,2],
      xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      main = "Bray-Curtis", 
-     col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
+     col = cols, mgp = c(2.5, 1, 0), pch = 1:length(cols), frame = TRUE,
      xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
      ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
      cex = 1, cex.main = 1.2, cex.lab = 1)
+
+grid(10, 10, lwd = 0.5)
 
 s.class(as.data.frame(pcs[,c(1, 2)]), fac = as.factor(out$treatment), cpoint = 0, col = cols, add.plot = TRUE)
 
@@ -217,10 +221,12 @@ plot(pcs[,1], pcs[,2],
      xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      main = "UUniFrac", 
-     col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
+     col = cols, mgp = c(2.5, 1, 0), pch = 1:length(cols), frame = TRUE,
      xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
      ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
      cex = 1, cex.main = 1.2, cex.lab = 1)
+
+grid(10, 10, lwd = 0.5)
 
 s.class(as.data.frame(pcs[,c(1, 2)]), fac = as.factor(out$treatment), cpoint = 0, col = cols, add.plot = TRUE)
 
@@ -254,10 +260,12 @@ plot(pcs[,1], pcs[,2],
      xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      main = "GUniFrac (0.25)", 
-     col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
+     col = cols, mgp = c(2.5, 1, 0), pch = 1:length(cols), frame = TRUE,
      xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
      ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
      cex = 1, cex.main = 1.2, cex.lab = 1)
+
+grid(10, 10, lwd = 0.5)
 
 s.class(as.data.frame(pcs[,c(1, 2)]), fac = as.factor(out$treatment), cpoint = 0, col = cols, add.plot = TRUE)
 
@@ -291,10 +299,12 @@ plot(pcs[,1], pcs[,2],
      xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      main = "GUniFrac (0.5)", 
-     col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
+     col = cols, mgp = c(2.5, 1, 0), pch = 1:length(cols), frame = TRUE,
      xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
      ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
      cex = 1, cex.main = 1.2, cex.lab = 1)
+
+grid(10, 10, lwd = 0.5)
 
 s.class(as.data.frame(pcs[,c(1, 2)]), fac = as.factor(out$treatment), cpoint = 0, col = cols, add.plot = TRUE)
 
@@ -328,10 +338,12 @@ plot(pcs[,1], pcs[,2],
      xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      main = "GUniFrac (0.75)", 
-     col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
+     col = cols, mgp = c(2.5, 1, 0), pch = 1:length(cols), frame = TRUE,
      xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
      ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
      cex = 1, cex.main = 1.2, cex.lab = 1)
+
+grid(10, 10, lwd = 0.5)
 
 s.class(as.data.frame(pcs[,c(1, 2)]), fac = as.factor(out$treatment), cpoint = 0, col = cols, add.plot = TRUE)
 
@@ -365,10 +377,12 @@ plot(pcs[,1], pcs[,2],
      xlab = paste("PC 1 (", round((eivals[1]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      ylab = paste("PC 2 (", round((eivals[2]/sum(eivals)) * 100, 1), "%)", sep = ""), 
      main = "WUniFrac", 
-     col = cols, mgp = c(2.5, 1, 0), pch = 21, frame = TRUE,
+     col = cols, mgp = c(2.5, 1, 0), pch = 1:length(cols), frame = TRUE,
      xlim = c(min(pcs[,1]) - (max(pcs[,1]) - min(pcs[,1]))/10, max(pcs[,1]) + (max(pcs[,1]) - min(pcs[,1]))/10), 
      ylim = c(min(pcs[,2]) - (max(pcs[,2]) - min(pcs[,2]))/10, max(pcs[,2]) + (max(pcs[,2]) - min(pcs[,2]))/10), 
      cex = 1, cex.main = 1.2, cex.lab = 1)
+
+grid(10, 10, lwd = 0.5)
 
 s.class(as.data.frame(pcs[,c(1, 2)]), fac = as.factor(out$treatment), cpoint = 0, col = cols, add.plot = TRUE)
 
