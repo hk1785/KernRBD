@@ -75,7 +75,7 @@ library(phyloseq)
 library(rgl)
 library(KernRBD)
 ```
-# Example Data: Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun)
+Example Data: Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun)
 ```
 biom
 
@@ -84,7 +84,7 @@ tax.tab <- tax_table(biom)
 sam.dat <- sample_data(biom)
 tree <- phy_tree(biom)
 ```
-# Convert pairwise distance matrix to pairwise kernel matrix.
+Convert pairwise distance matrix to pairwise kernel matrix.
 ```
 Ks <- lapply(Ds, function(d) D.to.K(d))
 ```
