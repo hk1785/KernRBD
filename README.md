@@ -58,6 +58,7 @@ KernRBD <- function(Ks, Block.IDs, Treatment, n.res = 5000)
 * _Ks_ - A list of kernel (e.g., pairwise similarity) matrices.
 * _Block.IDs_ - A vector of block (e.g., subject) IDs.
 * _Treatment_ - A vector of treatment labels.
+* _n.res_ - The number of resamples (Default: 5000)
 
 ### Values
 * _Ks_ - A list of kernel (similarity) matrices after quality controls and reorganizations.
