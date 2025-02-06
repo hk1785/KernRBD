@@ -1,1 +1,1 @@
-export("biom", "D.to.K", "Ds", "KernRBD")
+export("D.to.K", "KernRBD")
