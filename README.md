@@ -16,7 +16,7 @@ NeedsCompilation: no
 
 Depends: R(>= 4.4.1), ade4, gtools, phyloseq, rgl
 
-License: GNU v3.0
+License: GPL v3.0
 
 NeedsCompilation: no
 
