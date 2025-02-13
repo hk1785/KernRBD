@@ -56,7 +56,7 @@ install_github("hk1785/KernRBD", force=T)
 ### Description
 This function conducts KernRBD to compute P-values for global testing and adjusted P-values for pairwise comparisons.
 
-### Usage
+### Syntax
 ```
 KernRBD(Ks, Block.IDs, Treatment, n.res = 5000)
 ```
