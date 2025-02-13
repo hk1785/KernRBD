@@ -58,7 +58,7 @@ This function conducts KernRBD to compute P-values for global testing and adjust
 
 ### Usage
 ```
-KernRBD <- function(Ks, Block.IDs, Treatment, n.res = 5000)
+KernRBD(Ks, Block.IDs, Treatment, n.res = 5000)
 ```
 
 ### Arguments
