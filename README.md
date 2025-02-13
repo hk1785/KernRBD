@@ -61,13 +61,13 @@ This function conducts KernRBD to compute P-values for global testing and adjust
 KernRBD(Ks, Block.IDs, Treatment, n.res = 5000)
 ```
 
-### Inputs
+### Input
 * _Ks_ - A list of kernel (e.g., similarity) matrices.
 * _Block.IDs_ - A vector of block (e.g., subject) IDs.
 * _Treatment_ - A vector of treatment labels.
 * _n.res_ - The number of resamples (Default: 5000).
 
-### Outputs
+### Output
 * _Ks_ - A list of kernel (similarity) matrices after quality controls and reorganizations.
 * _block.IDs_ - A vector of block (e.g., subject) IDs after quality controls and reorganizations.
 * _treatment_ - A vector of treatment labels after quality controls and reorganizations.
