@@ -16,6 +16,6 @@ The main functions are KernRBD to compute P-values for global testing and adjust
 Maintainer: \packageMaintainer{KernRBD}
 }
 \references{
-Koh H. A general kernel machine comparative analysis framework for randomized block designs. (In Review)
+Koh H. A general kernel machine comparative analysis framework for randomized block designs: Applications to human microbiome studies. (In Review)
 }
 \keyword{package}

@@ -16,7 +16,7 @@ License: GPL-3
 
 ## Reference
 
-* Koh H. A general kernel machine comparative analysis framework for randomized block designs. (_In Review_)
+* Koh H. A general kernel machine comparative analysis framework for randomized block designs: Applications to human microbiome studies. (_In Review_)
 
 ## Troubleshooting Tips
 
@@ -194,4 +194,3 @@ The computational cost is O(|K|(1 + q)RN^2), where |K| is the number of input ke
 ## Version History
 
 * Version 1.1 (2026-10-26) - Faster computation in C++ (Rcpp) with multicore computation (OpenMP), input checks, the ordination plot function (ordi.plot), and the P-values exactly following the formulas in the reference (e.g., ties counted in the reference set, and the step-down minP procedure based on the null P-values).
-* Version 1.0 (2025-02-06) - Initial release.

@@ -18,7 +18,7 @@ Distance matrix
 Kernel matrix
 }
 \references{
-Koh H. A general kernel machine comparative analysis framework for randomized block designs. (In Review)
+Koh H. A general kernel machine comparative analysis framework for randomized block designs: Applications to human microbiome studies. (In Review)
 }
 \author{
 Hyunwook Koh

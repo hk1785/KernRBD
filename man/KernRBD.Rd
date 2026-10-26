@@ -43,7 +43,7 @@ global.out: A list of P-values for global testing (itembyitem.pvals: P-values fo
 pairwise.out: A list of P-values and adjusted P-values for pairwise comparisons (itembyitem.pvals and itembyitem.adj.pvals: P-values and adjusted P-values for each kernel; minP.pvals and minP.adj.pvals: P-values and adjusted P-values for the omnibus test). This is provided for more than two treatments.
 }
 \references{
-Koh H. A general kernel machine comparative analysis framework for randomized block designs. (In Review)
+Koh H. A general kernel machine comparative analysis framework for randomized block designs: Applications to human microbiome studies. (In Review)
 }
 \author{
 Hyunwook Koh

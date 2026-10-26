@@ -64,7 +64,7 @@ pcs: A matrix of the principal coordinates.
 prop: A vector of the proportions of total variance explained.
 }
 \references{
-Koh H. A general kernel machine comparative analysis framework for randomized block designs. (In Review)
+Koh H. A general kernel machine comparative analysis framework for randomized block designs: Applications to human microbiome studies. (In Review)
 }
 \author{
 Hyunwook Koh
