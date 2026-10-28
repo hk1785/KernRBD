@@ -210,7 +210,7 @@ function(K, Treatment, dim = 2, pcs = NULL, cols = NULL, pchs = NULL, main = NUL
 
   if (dim == 2 || !interactive) {
     if (legend) {
-      leg.args <- list(legend = grps, pch = pchs, col = borders, pt.bg = cols, pt.lwd = 0.8, pt.cex = s.pt, bty = "n",
+      leg.args <- list(legend = grps, pch = pchs, col = borders, pt.bg = cols, pt.lwd = 0.8, pt.cex = min(s.pt, 1.2 * s.tx), bty = "n",
                        cex = 0.9 * s.tx, title = legend.title, inset = 0.01)
       if (identical(legend.pos, "auto")) {
         legend.pos <- if (dim == 2) auto.legend.pos(leg.args, leg.xy, leg.ell) else auto.legend.pos(leg.args, leg.xy, leg.ell, top.only = TRUE)

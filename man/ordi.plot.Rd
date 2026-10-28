@@ -26,10 +26,10 @@ The number of dimensions: 2 or 3 (Default: 2).
 The principal coordinates to plot (Default: c(1, 2) for dim = 2 and c(1, 2, 3) for dim = 3).
   }
   \item{cols}{
-The colors for the treatments (Default: blue, orange, green and wine for up to four treatments, which are distinct also in grayscale and for color vision deficiencies).
+The colors for the treatments (Default: blue, orange, green and wine for up to four treatments).
   }
   \item{pchs}{
-The symbols for the treatments (Default: circle, triangle, square, diamond and inverted triangle for up to five treatments).
+The symbols for the treatments (Default: circle, triangle, square and diamond for up to four treatments).
   }
   \item{main}{
 The title of the plot.
@@ -65,7 +65,7 @@ The size of the texts, i.e., the axis labels, tick labels, title, legend and pan
 The viewing angles (degrees) of the three-dimensional plot (Default: 40 and 20).
   }
   \item{interactive}{
-Whether to draw the three-dimensional plot interactively, i.e., to be rotated and zoomed, using the R package rgl (Default: FALSE).
+Whether to draw the three-dimensional plot to be rotated and zoomed using the R package rgl (Default: FALSE).
   }
   \item{...}{
 Other graphical parameters passed to plot (dim = 2; e.g., xlim, ylim and asp), persp (dim = 3) or rgl::plot3d (dim = 3 and interactive = TRUE).

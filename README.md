@@ -70,7 +70,7 @@ summary(out, adjusted = TRUE)
 * _Ks_ - A list of kernel (e.g., similarity) matrices. A single kernel matrix is also allowed.
 * _Block.IDs_ - A vector of block (e.g., subject) IDs.
 * _Treatment_ - A vector of treatment labels (e.g., numbers, characters or factor levels), each of which is treated as a distinct treatment.
-* _ref_ - The reference treatment label (e.g., baseline) for pairwise comparisons (Default: NULL). If NULL, all possible pairwise comparisons are conducted; otherwise, only the pairwise comparisons between the reference treatment and each of the other treatments are conducted.
+* _ref_ - The reference treatment label (e.g., baseline) for pairwise comparisons (Default: NULL, i.e., all possible pairwise comparisons). If specified, only the pairwise comparisons between the reference treatment and each of the other treatments are conducted.
 * _n.res_ - The number of resamples (Default: 5000).
 * _n.cores_ - The number of cores for parallel computation (Default: 1).
 
@@ -116,12 +116,12 @@ ordi.plot(K, Treatment, dim = 2, pcs = NULL, cols = NULL, pchs = NULL, main = NU
 * _Treatment_ - A vector of treatment labels.
 * _dim_ - The number of dimensions: 2 or 3 (Default: 2).
 * _pcs_ - The principal coordinates to plot (Default: c(1, 2) for dim = 2 and c(1, 2, 3) for dim = 3).
-* _cols_ - The colors for the treatments (Default: blue, orange, green and wine for up to four treatments, which are distinct also in grayscale and for color vision deficiencies).
+* _cols_ - The colors for the treatments (Default: blue, orange, green and wine for up to four treatments).
 * _pchs_ - The symbols for the treatments (Default: circle, triangle, square and diamond for up to four treatments).
 * _main_ - The title of the plot.
 * _tag_ - The panel label (e.g., "A").
-* _ellipse_ - Whether to draw an ellipse (1.5 standard deviations) for each treatment (Default: TRUE). A positive number sets the number of standard deviations (e.g., ellipse = 2).
-* _star_ - Whether to connect the observations to their treatment centroid (Default: TRUE).
+* _ellipse_ - Whether to draw an ellipse (1.5 standard deviations) for each treatment in the two-dimensional plot (Default: TRUE). A positive number sets the number of standard deviations (e.g., ellipse = 2).
+* _star_ - Whether to connect the observations to their treatment centroid in the two-dimensional plot (Default: TRUE).
 * _legend_ - Whether to draw a legend (Default: TRUE).
 * _legend.pos_ - The position of the legend (Default: "auto", the corner overlapping the fewest observations), or a keyword such as "topleft".
 * _legend.title_ - The title of the legend (e.g., "Treatment").
@@ -129,7 +129,7 @@ ordi.plot(K, Treatment, dim = 2, pcs = NULL, cols = NULL, pchs = NULL, main = NU
 * _cex.pt_ - The size of the symbols (Default: 1.2).
 * _cex.text_ - The size of the texts, i.e., the axis labels, tick labels, title, legend and panel label (Default: 1.1).
 * _theta_, _phi_ - The viewing angles (degrees) of the three-dimensional plot (Default: 40 and 20).
-* _interactive_ - Whether to draw the three-dimensional plot interactively (i.e., to be rotated and zoomed) using the R package rgl (Default: FALSE).
+* _interactive_ - Whether to draw the three-dimensional plot to be rotated and zoomed using the R package rgl (Default: FALSE).
 * _..._ - Other graphical parameters passed to plot (dim = 2; e.g., xlim, ylim and asp), persp (dim = 3) or rgl::plot3d (dim = 3 and interactive = TRUE).
 
 ### Values

@@ -27,7 +27,7 @@ A vector of block (e.g., subject) IDs.
 A vector of treatment labels (e.g., numbers, characters or factor levels), each of which is treated as a distinct treatment.
   }
   \item{ref}{
-The reference treatment label (e.g., baseline) for pairwise comparisons (Default: NULL). If NULL, all possible pairwise comparisons are conducted; otherwise, only the pairwise comparisons between the reference treatment and each of the other treatments are conducted, and the adjusted P-values are calculated for these comparisons.
+The reference treatment label (e.g., baseline) for pairwise comparisons (Default: NULL, i.e., all possible pairwise comparisons). If specified, only the pairwise comparisons between the reference treatment and each of the other treatments are conducted, and the adjusted P-values are calculated for these comparisons.
   }
   \item{n.res}{
 The number of resamples (i.e., within-block rearrangements) (Default: 5000). The smallest attainable P-value is 1/(n.res + 1); hence, a larger number (e.g., n.res = 10000 or more) is recommended for stringent significance levels after the adjustment for multiple comparisons.
