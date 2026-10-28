@@ -208,8 +208,3 @@ The runtimes of KernRBD per dataset (seconds) are summarized below for m treatme
 | 4 | 200 | 0.82 (0.03) |
 | 5 | 125 | 0.35 (0.02) |
 | 5 | 250 | 1.25 (0.06) |
-
-## Version History
-
-* Version 1.2 (2026-10-28) - Summary table of the P-values by print() and summary(), messages for removed observations and warnings for distance matrices given as kernels, D.to.K for a list of distance matrices, and the improved ordination plot (colorblind-safe colors, filled symbols, automatic legend position, legend title, and user-specified ellipse size and axis limits).
-* Version 1.1 (2026-10-26) - Faster computation in C++ (Rcpp) with multicore computation (OpenMP), input checks, the ordination plot function (ordi.plot), and the P-values exactly following the formulas in the reference (e.g., ties counted in the reference set, and the step-down minP procedure based on the null P-values).
