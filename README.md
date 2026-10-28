@@ -24,7 +24,7 @@ If you have any problems for using this R package, please report in Issues (http
 
 ## Software Dependencies
 
-KernRBD is implemented in R (>= 3.6.0) and C++, and requires only the base R packages (stats, graphics, grDevices and utils) and the R package Rcpp. The R package rgl is optional for three-dimensional ordination plots, and the R package phyloseq is optional for the example data. The installation from GitHub requires a C++ compiler (Rtools for Windows; Xcode Command Line Tools for macOS), and the multicore computation requires OpenMP.
+KernRBD is implemented in R (>= 3.6.0) and C++, and requires only the base R packages (stats, graphics, grDevices and utils) and the R package Rcpp. The R package rgl is optional for interactive three-dimensional ordination plots, and the R package phyloseq is optional for the example data. The installation from GitHub requires a C++ compiler (Rtools for Windows; Xcode Command Line Tools for macOS), and the multicore computation requires OpenMP.
 
 ## Prerequisites
 
@@ -60,7 +60,7 @@ This function conducts KernRBD to compute P-values for global testing and adjust
 
 ### Syntax
 ```
-KernRBD(Ks, Block.IDs, Treatment, n.res = 5000, n.cores = 1)
+KernRBD(Ks, Block.IDs, Treatment, ref = NULL, n.res = 5000, n.cores = 1)
 
 print(out, digits = 3)
 summary(out, adjusted = TRUE)
@@ -69,7 +69,8 @@ summary(out, adjusted = TRUE)
 ### Arguments
 * _Ks_ - A list of kernel (e.g., similarity) matrices. A single kernel matrix is also allowed.
 * _Block.IDs_ - A vector of block (e.g., subject) IDs.
-* _Treatment_ - A vector of treatment labels.
+* _Treatment_ - A vector of treatment labels (e.g., numbers, characters or factor levels), each of which is treated as a distinct treatment.
+* _ref_ - The reference treatment label (e.g., baseline) for pairwise comparisons (Default: NULL). If NULL, all possible pairwise comparisons are conducted; otherwise, only the pairwise comparisons between the reference treatment and each of the other treatments are conducted.
 * _n.res_ - The number of resamples (Default: 5000).
 * _n.cores_ - The number of cores for parallel computation (Default: 1).
 
@@ -106,16 +107,17 @@ This function draws a two- or three-dimensional ordination plot using the princi
 ### Syntax
 ```
 ordi.plot(K, Treatment, dim = 2, pcs = NULL, cols = NULL, pchs = NULL, main = NULL, tag = NULL,
-          ellipse = TRUE, star = TRUE, legend = TRUE, legend.pos = "auto", legend.title = NULL, cex = 1, ...)
+          ellipse = TRUE, star = TRUE, legend = TRUE, legend.pos = "auto", legend.title = NULL,
+          cex = 1, cex.pt = 1.2, cex.text = 1.1, theta = 40, phi = 20, interactive = FALSE, ...)
 ```
 
 ### Arguments
 * _K_ - A kernel (e.g., similarity) matrix.
 * _Treatment_ - A vector of treatment labels.
-* _dim_ - The number of dimensions: 2 or 3 (Default: 2). The three-dimensional plot requires the R package rgl.
+* _dim_ - The number of dimensions: 2 or 3 (Default: 2).
 * _pcs_ - The principal coordinates to plot (Default: c(1, 2) for dim = 2 and c(1, 2, 3) for dim = 3).
-* _cols_ - The colors for the treatments (Default: the colorblind-safe Okabe-Ito palette).
-* _pchs_ - The symbols for the treatments (Default: filled symbols).
+* _cols_ - The colors for the treatments (Default: blue, orange, green and wine for up to four treatments, which are distinct also in grayscale and for color vision deficiencies).
+* _pchs_ - The symbols for the treatments (Default: circle, triangle, square and diamond for up to four treatments).
 * _main_ - The title of the plot.
 * _tag_ - The panel label (e.g., "A").
 * _ellipse_ - Whether to draw an ellipse (1.5 standard deviations) for each treatment (Default: TRUE). A positive number sets the number of standard deviations (e.g., ellipse = 2).
@@ -123,8 +125,12 @@ ordi.plot(K, Treatment, dim = 2, pcs = NULL, cols = NULL, pchs = NULL, main = NU
 * _legend_ - Whether to draw a legend (Default: TRUE).
 * _legend.pos_ - The position of the legend (Default: "auto", the corner overlapping the fewest observations), or a keyword such as "topleft".
 * _legend.title_ - The title of the legend (e.g., "Treatment").
-* _cex_ - The scaling factor for the symbols and texts (Default: 1).
-* _..._ - Other graphical parameters passed to plot (dim = 2; e.g., xlim, ylim and asp) or rgl::plot3d (dim = 3).
+* _cex_ - The overall scaling factor for the symbols and texts (Default: 1).
+* _cex.pt_ - The size of the symbols (Default: 1.2).
+* _cex.text_ - The size of the texts, i.e., the axis labels, tick labels, title, legend and panel label (Default: 1.1).
+* _theta_, _phi_ - The viewing angles (degrees) of the three-dimensional plot (Default: 40 and 20).
+* _interactive_ - Whether to draw the three-dimensional plot interactively (i.e., to be rotated and zoomed) using the R package rgl (Default: FALSE).
+* _..._ - Other graphical parameters passed to plot (dim = 2; e.g., xlim, ylim and asp), persp (dim = 3) or rgl::plot3d (dim = 3 and interactive = TRUE).
 
 ### Values
 * _pcs_ - A matrix of the principal coordinates.
@@ -137,10 +143,9 @@ ordi.plot(K, Treatment, dim = 2, pcs = NULL, cols = NULL, pchs = NULL, main = NU
 Import requisite R packages
 ```
 library(phyloseq)
-library(rgl)
 library(KernRBD)
 ```
-Example Data: Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun)
+Example Data: Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun), for 4 treatments (Treatment: 1, Baseline; 2, PRF 1; 3, PRF 2; 4, PRF 3) assigned to each of 12 rhesus monkeys (Monkey.ID)
 ```
 data(biom)
 
@@ -169,6 +174,12 @@ out
 
 tab <- summary(out)
 write.csv(tab, "KernRBD_Results.csv")
+
+# Pairwise comparisons only between the baseline (1) and each of the other treatments
+
+set.seed(521)
+out.ref <- KernRBD(Ks = Ks, Block.IDs = sam.dat$Monkey.ID, Treatment = sam.dat$Treatment, ref = 1, n.res = 5000)
+out.ref
 ```
 Draw ordination plots.
 ```
@@ -181,9 +192,18 @@ for (i in 1:7) {
 }
 dev.off()
 
-# Three-dimensional plot (First kernel: Jaccard)
+# Three-dimensional plots (saved as a PDF file)
 
-ordi.plot(Ks[[1]], Treatment = sam.dat$Treatment, dim = 3)
+pdf("KernRBD_Ordination_3D.pdf", width = 16, height = 8)
+par(mfrow = c(2, 4), mar = c(2, 2.5, 3.5, 2.5))
+for (i in 1:7) {
+  ordi.plot(Ks[[i]], Treatment = sam.dat$Treatment, dim = 3, main = names(Ks)[i], tag = LETTERS[i], legend = (i == 1))
+}
+dev.off()
+
+# Interactive three-dimensional plot (First kernel: Jaccard; requires the R package rgl)
+
+ordi.plot(Ks[[1]], Treatment = sam.dat$Treatment, dim = 3, interactive = TRUE)
 ```
 
 ---------------------------------------------------------------------------------------------------------------------------------------

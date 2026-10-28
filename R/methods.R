@@ -22,8 +22,10 @@ summary.KernRBD <- function(object, adjusted = TRUE, ...) {
   if (!is.null(object$pairwise.out)) {
     pw <- object$pairwise.out
     P <- if (adjusted) rbind(pw$itembyitem.adj.pvals, Omnibus = pw$minP.adj.pvals) else rbind(pw$itembyitem.pvals, Omnibus = pw$minP.pvals)
-    treat.levels <- sort(unique(object$treatment))
-    pairs <- t(utils::combn(treat.levels, 2))
+    pairs <- attr(object, "pairs")
+    if (is.null(pairs)) {
+      pairs <- t(utils::combn(as.character(sort(unique(object$treatment))), 2))
+    }
     colnames(P) <- paste(pairs[, 1], "vs.", pairs[, 2])
     tab <- cbind(tab, as.data.frame(P, check.names = FALSE))
   }
@@ -55,6 +57,9 @@ print.KernRBD <- function(x, digits = 3, ...) {
   cat("Kernels: ", length(kern.names), " (", paste(kern.names, collapse = ", "), ")\n", sep = "")
   if (!is.null(attr(x, "n.res"))) {
     cat("Resamples: ", attr(x, "n.res"), "\n", sep = "")
+  }
+  if (!is.null(x$pairwise.out)) {
+    cat("Pairwise comparisons: ", if (is.null(attr(x, "ref"))) "all pairs" else paste(attr(x, "ref"), "vs. each of the other treatments"), "\n", sep = "")
   }
   cat("\n")
   print(summary(x), digits = digits)

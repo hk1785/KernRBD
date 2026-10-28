@@ -10,7 +10,7 @@ KernRBD to compute P-values for global testing and adjusted P-values for pairwis
 This function conducts KernRBD to compute P-values for global testing and adjusted P-values for pairwise comparisons, for each input kernel and the omnibus test across multiple input kernels.
 }
 \usage{
-KernRBD(Ks, Block.IDs, Treatment, n.res = 5000, n.cores = 1)
+KernRBD(Ks, Block.IDs, Treatment, ref = NULL, n.res = 5000, n.cores = 1)
 
 \method{print}{KernRBD}(x, digits = 3, ...)
 
@@ -24,7 +24,10 @@ A list of kernel (e.g., similarity) matrices. A single kernel matrix is also all
 A vector of block (e.g., subject) IDs.
   }
   \item{Treatment}{
-A vector of treatment labels.
+A vector of treatment labels (e.g., numbers, characters or factor levels), each of which is treated as a distinct treatment.
+  }
+  \item{ref}{
+The reference treatment label (e.g., baseline) for pairwise comparisons (Default: NULL). If NULL, all possible pairwise comparisons are conducted; otherwise, only the pairwise comparisons between the reference treatment and each of the other treatments are conducted, and the adjusted P-values are calculated for these comparisons.
   }
   \item{n.res}{
 The number of resamples (i.e., within-block rearrangements) (Default: 5000). The smallest attainable P-value is 1/(n.res + 1); hence, a larger number (e.g., n.res = 10000 or more) is recommended for stringent significance levels after the adjustment for multiple comparisons.
@@ -79,7 +82,9 @@ if (requireNamespace("phyloseq", quietly = TRUE)) {
   data(biom)
   sam.dat <- phyloseq::sample_data(biom)
   set.seed(521)
-  out <- KernRBD(Ks = Ks, Block.IDs = sam.dat$Monkey.ID, Treatment = sam.dat$Treatment, n.res = 199)
+  out <- KernRBD(Ks = Ks, Block.IDs = sam.dat$Monkey.ID, Treatment = sam.dat$Treatment, n.res = 99)
+  out.ref <- KernRBD(Ks = Ks, Block.IDs = sam.dat$Monkey.ID, Treatment = sam.dat$Treatment,
+                     ref = 1, n.res = 99)
   out
   summary(out)
 }

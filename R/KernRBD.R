@@ -1,5 +1,5 @@
 KernRBD <-
-function(Ks, Block.IDs, Treatment, n.res = 5000, n.cores = 1) {
+function(Ks, Block.IDs, Treatment, ref = NULL, n.res = 5000, n.cores = 1) {
 
   # Input checks
 
@@ -73,6 +73,12 @@ function(Ks, Block.IDs, Treatment, n.res = 5000, n.cores = 1) {
 
   if (m == 1) {
     stop("at least two treatment labels are needed.")
+  }
+  if (!is.null(ref)) {
+    ref.i <- match(as.character(ref), as.character(treat.levels))
+    if (length(ref) != 1 || is.na(ref.i)) {
+      stop("ref should be one of the treatment labels.")
+    }
   }
   if (max(table(Block.IDs)) < 2) {
     stop("at least one block with multiple observations is needed.")
@@ -150,18 +156,20 @@ function(Ks, Block.IDs, Treatment, n.res = 5000, n.cores = 1) {
   if (m > 2) {
 
     # Pairwise comparisons: within-block rearrangement of the two treatment labels only,
-    # where the same rearrangements are used for all kernels
+    # where the same rearrangements are used for all kernels. All possible pairs (ref = NULL),
+    # or the pairs of the reference treatment and each of the other treatments
 
-    pair.grps <- t(combn(treat.levels, 2))
-    n.pairs <- nrow(pair.grps)
+    pair.idx <- if (is.null(ref)) t(combn(m, 2)) else cbind(ref.i, setdiff(1:m, ref.i))
+    pair.grps <- matrix(as.character(treat.levels)[pair.idx], ncol = 2)
+    n.pairs <- nrow(pair.idx)
     block.levels <- unique(Block.IDs)
 
     pair.P.all <- lapply(1:length(Ks), function(i) matrix(NA, n.res + 1, n.pairs))
     for (j in 1:n.pairs) {
-      treat.ind <- is.element(Treatment, pair.grps[j, ])
+      treat.ind <- is.element(lab, pair.idx[j, ] - 1L)
       treat.block.inds <- lapply(block.levels, function(b) which(treat.ind & Block.IDs == b))
       treat.block.inds <- treat.block.inds[sapply(treat.block.inds, length) > 1]
-      T.pair <- T.null(treat.block.inds, match(pair.grps[j, ], treat.levels) - 1L)
+      T.pair <- T.null(treat.block.inds, pair.idx[j, ] - 1L)
       for (i in 1:length(Ks)) {
         pair.P.all[[i]][, j] <- ref.pvals(T.pair[, i])
       }
@@ -192,6 +200,10 @@ function(Ks, Block.IDs, Treatment, n.res = 5000, n.cores = 1) {
 
   }
 
+  if (m > 2) {
+    attr(output, "pairs") <- pair.grps
+    attr(output, "ref") <- ref
+  }
   attr(output, "n.res") <- n.res
   attr(output, "n.removed") <- length(ind.na)
   class(output) <- "KernRBD"

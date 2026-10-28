@@ -5,7 +5,7 @@
 Microbiome
 }
 \description{
-Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun)
+Gut microbiome data to assess the effect of periodically restricted feeding (PRF) on gut microbiome profiles (Yanai et al., 2024, Nat Commun), for 4 treatments (Treatment: 1, Baseline; 2, PRF 1; 3, PRF 2; 4, PRF 3) assigned to each of 12 rhesus monkeys (Monkey.ID) for 386 microbial features (amplicon sequence variants)
 }
 \usage{data("biom")}
 \format{
@@ -34,7 +34,7 @@ Formal class 'phyloseq' [package "phyloseq"] with 5 slots
 Formal class 'sample_data' [package "phyloseq"] with 4 slots
   .. .. ..@ .Data    :List of 2
   .. .. .. ..$ : chr [1:48] "DCGG" "DCGG" "DCGG" "DCGG" ...
-  .. .. .. ..$ : chr [1:48] "Baseline" "PRF 1" "PRF 2" "PRF 3" ...
+  .. .. .. ..$ : int [1:48] 1 2 3 4 1 2 3 4 1 2 ...
   .. .. ..@ names    : chr [1:2] "Monkey.ID" "Treatment"
   .. .. ..@ row.names: chr [1:48] "S1" "S2" "S3" "S4" ...
   .. .. ..@ .S3Class : chr "data.frame"
