@@ -1,7 +1,0 @@
-export("D.to.K", "KernRBD", "ordi.plot")
-useDynLib("KernRBD", .registration = TRUE)
-importFrom("Rcpp", "evalCpp")
-importFrom("stats", "cov.wt")
-importFrom("graphics", "plot", "points", "segments", "lines", "abline", "legend", "mtext", "grconvertX")
-importFrom("grDevices", "hcl.colors", "adjustcolor")
-importFrom("utils", "combn")
